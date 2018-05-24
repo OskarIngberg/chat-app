@@ -1,0 +1,22 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "Chatt app built on Angular with socket.io intregation",
+  "main": "index.js",
+  "scripts": {
+    "start": "start npm run mongo && start npm run api && start npm run ng",
+    "api": "cd api && npm start",
+    "ng": "cd angular && npm start",
+    "mongo": "C:/\"Program Files\"/MongoDB/Server/3.6/bin/mongod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OskarIngberg/chat-app.git"
+  },
+  "author": "Oskar Ingberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OskarIngberg/chat-app/issues"
+  },
+  "homepage": "https://github.com/OskarIngberg/chat-app#readme"
+}
