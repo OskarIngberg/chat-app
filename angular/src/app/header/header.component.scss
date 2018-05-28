@@ -1,11 +1,9 @@
-header {
-    display: flex;
+@import "units-variables";
 
-    header-search {
-        width: 20%;
-    }
+header-search {
+    width: 20%;
+}
 
-    header-info {
-        width: 80%;
-    }
+header-info {
+    width: 80%;
 }

@@ -1,0 +1,25 @@
+@import "units-variables";
+@import "colors-variables";
+
+header-panel {
+    width: 100%;
+    display: flex;
+}
+
+.middle-panel {
+    width: 100%;
+    display: flex;
+
+    left-panel {
+        width: 20%;
+    }
+
+    right-panel {
+        width: 80%;
+    }
+}
+
+.footer-panel {
+    width: 100%;
+    display: flex;
+}

@@ -1,3 +1,14 @@
-@import './scss/reset';
-@import './scss/units';
-@import './scss/typography';
+@import 'scss/typography-variables';
+@import 'scss/reset';
+
+body {
+    font-family: $main;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+*:focus {
+    outline: none;
+}

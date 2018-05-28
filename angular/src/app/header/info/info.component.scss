@@ -1,0 +1,32 @@
+@import "units-variables";
+@import "colors-variables";
+@import "typography-variables";
+
+.header-info {
+    display: flex;
+    border-bottom: $unit-base / 2 solid $lighter-grey;
+    
+    .title {
+        height: $unit-100;
+        width: 85%;
+        line-height: $unit-100;
+        padding-left: $unit-40;
+        font-size: $unit-20;
+    }
+
+    .actions {
+        width: 15%;
+
+        i {
+            height: $unit-100;
+            line-height: $unit-100;
+            color: $light-grey;
+            margin-right: $unit-24;
+            cursor: pointer;
+        }
+
+        i:last-child {
+            margin-right: 0;
+        }
+    }
+}

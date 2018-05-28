@@ -1,0 +1,54 @@
+@import "units-variables";
+@import "colors-variables";
+@import "typography-variables";
+
+.group-list-wrapper {
+    width: 100%;
+    height: $unit-400;
+    background-color: $dark-blue;
+}
+
+.group-chat {
+    display: flex;
+    padding: $unit-8;
+    cursor: pointer;
+
+    .image {
+        width: 20%;
+
+        img {
+            width: 100%;
+            clip-path: circle(50% at center);
+        }
+    }
+
+    .info {
+        padding: $unit-8;
+        width: 100%;
+        color: $white;
+        
+        .title {
+            display: flex;
+            position: relative;
+            width: 100%;
+
+            .title-text {
+                font-weight: bold;
+                font-size: $unit-16;
+                max-width: 184px;
+            }
+
+            .title-time {
+                position: absolute;
+                font-size: 12px;
+                right: 0;
+                top: $unit-base;
+            }
+        }
+
+        .last-message {
+            font-size: $unit-12;
+            padding-top: $unit-8;
+        }
+    }
+}

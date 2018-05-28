@@ -1,0 +1,19 @@
+// Units based on factor 4
+$unit-base: 4px;
+$unit-8: $unit-base * 2;
+$unit-12: $unit-base * 3;
+$unit-16: $unit-base * 4;
+$unit-20: $unit-base * 5;
+$unit-24: $unit-base * 6;
+$unit-28: $unit-base * 7;
+$unit-32: $unit-base * 8;
+$unit-36: $unit-base * 9;
+$unit-40: $unit-base * 10;
+$unit-80: $unit-base * 20;
+$unit-100: $unit-base * 25;
+$unit-200: $unit-base * 50;
+$unit-300: $unit-base * 75;
+$unit-400: $unit-base * 100;
+
+// Shadows
+$bottom-light-shadow: 0 $unit-base $unit-base 0 rgba(0, 0, 0, $unit-base / 10);

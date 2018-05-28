@@ -1,4 +1,52 @@
+@import "units-variables";
+@import "colors-variables";
+@import "typography-variables";
+
 .header-search {
     height: 100px;
-    background-color: blue;
+    background-color: $dark-blue;
+    position: relative;
+    border-bottom: $unit-base / 2 solid $darker-blue;
+
+    .search-input {
+        width: 90%;
+        height: $unit-28;
+        position: absolute;
+        top: $unit-36;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background-color: $blue;
+        font-family: $main;
+        border-radius: 2px;
+
+        i {
+            font-size: 13px;
+            padding: $unit-8;
+            color: $lighter-grey;
+        }
+
+        input {
+            background: none;
+            border: none;
+            margin-left: $unit-base;
+            width: 85%;
+            font-family: $main;
+            color: $lighter-grey;
+        }
+
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: $lighter-grey;
+            opacity: 1; /* Firefox */
+        }
+        
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: $lighter-grey;
+        }
+        
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: $lighter-grey;
+        }
+    }
 }
+

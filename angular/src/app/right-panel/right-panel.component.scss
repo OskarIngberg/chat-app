@@ -1,0 +1,8 @@
+@import "units-variables";
+@import "colors-variables";
+@import "typography-variables";
+
+.right-panel {
+    padding-left: $unit-40;
+    padding-top: $unit-16;
+}
