@@ -1,0 +1,44 @@
+@import "units-variables";
+@import "colors-variables";
+
+.message {
+    display: flex;
+    position: relative;
+    width: 90%;
+    margin-bottom: $unit-12;
+
+    .image {
+        width: $unit-60;
+
+        img {
+            width: 100%;
+            clip-path: circle(50% at center);
+        }
+    }
+
+    .time {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: $unit-12;
+        color: $light-grey;
+    }
+
+    .message-info {
+        width: 90%;
+        padding-left: $unit-12;
+
+        .title {
+            display: flex;
+            
+            .name {
+                margin-bottom: $unit-12;
+                font-weight: 700;
+            }
+        }
+
+        .message-text {
+            font-size: $unit-12 + 2;
+        }
+    }
+}

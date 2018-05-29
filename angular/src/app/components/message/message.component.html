@@ -1,0 +1,14 @@
+<div class="message">
+    <div class="image">
+      <img [src]="data.image">
+    </div>
+    <p class="time">{{ data.time | date:'HH:mm' }}</p>
+    <div class="message-info">
+      <div class="title">
+        <h4 class="name">{{ data.user }}</h4>
+      </div>
+      <p class="message-text">
+        {{ data.message }}
+      </p>
+    </div>
+  </div>

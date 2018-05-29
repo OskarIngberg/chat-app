@@ -1,0 +1,10 @@
+<div
+  class="group-list-wrapper"
+  [style.height.px]="windowHeight"
+  (window:resize)="onResize($event)">
+  <ul>
+    <li *ngFor="let groupChat of groupChats">
+      <group-chat [data]="groupChat" (click)="changeGroupChat(groupChat.id)"></group-chat>
+    </li>
+  </ul>
+</div>

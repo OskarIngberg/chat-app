@@ -1,0 +1,18 @@
+<div class="group-chat" [class.active]="data.active">
+  <div class="image">
+    <img [src]="data.image">
+  </div>
+  <div class="info">
+    <div class="title">
+      <h4 class="title-text">
+        {{ data.title }}
+      </h4>
+      <p class="title-time">
+        {{ data.time | date:'HH:mm' }}
+      </p>
+    </div>
+    <p class="last-message">
+      {{ data.lastMessage }}
+    </p>
+  </div>
+</div>

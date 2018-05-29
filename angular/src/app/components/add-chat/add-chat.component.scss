@@ -1,0 +1,16 @@
+@import "units-variables";
+@import "colors-variables";
+
+.add-chat {
+    height: $unit-100;
+    background-color: $dark-blue;
+    position: relative;
+    border-top: $unit-base / 2 solid $darkest-blue;
+
+    i {
+        font-size: $unit-40;
+        margin: $unit-24;
+        cursor: pointer;
+        color: $white;
+    }
+}

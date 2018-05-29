@@ -2,13 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { SearchComponent } from './header/search/search.component';
-import { InfoComponent } from './header/info/info.component';
-import { LeftPanelComponent } from './left-panel/left-panel.component';
-import { RightPanelComponent } from './right-panel/right-panel.component';
-import { AddChatComponent } from './add-chat/add-chat.component';
-import { MessagesPanelComponent } from './messages-panel/messages-panel.component';
+import { HeaderComponent } from './components/panels/header/header.component';
+import { SearchComponent } from './components/panels/header/search/search.component';
+import { InfoComponent } from './components/panels/header/info/info.component';
+import { LeftPanelComponent } from './components/panels/left-panel/left-panel.component';
+import { RightPanelComponent } from './components/panels/right-panel/right-panel.component';
+import { MessagesPanelComponent } from './components/panels/messages-panel/messages-panel.component';
+
+import { AddChatComponent } from './components/add-chat/add-chat.component';
+import { GroupChatComponent } from './components/group-chat/group-chat.component';
+import { MessageComponent } from './components/message/message.component';
+
+import { AddMessageService } from './services/add-message/add-message.service';
+import { GroupChatService } from './services/group-chat/group-chat.service';
 
 @NgModule({
   declarations: [
@@ -19,12 +25,17 @@ import { MessagesPanelComponent } from './messages-panel/messages-panel.componen
     LeftPanelComponent,
     RightPanelComponent,
     AddChatComponent,
-    MessagesPanelComponent
+    MessagesPanelComponent,
+    GroupChatComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    AddMessageService,
+    GroupChatService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

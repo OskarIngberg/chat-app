@@ -1,12 +1,5 @@
 @import "units-variables";
 @import "colors-variables";
-@import "typography-variables";
-
-.group-list-wrapper {
-    width: 100%;
-    height: $unit-400;
-    background-color: $dark-blue;
-}
 
 .group-chat {
     display: flex;
@@ -33,7 +26,7 @@
             width: 100%;
 
             .title-text {
-                font-weight: bold;
+                font-weight: 700;
                 font-size: $unit-16;
                 max-width: 184px;
             }
@@ -51,4 +44,8 @@
             padding-top: $unit-8;
         }
     }
+}
+
+.active {
+    background-color: $darker-blue;
 }

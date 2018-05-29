@@ -1,0 +1,34 @@
+@import "units-variables";
+@import "colors-variables";
+
+.messages-panel {
+    display: flex;
+    position: relative;
+    height: $unit-100;
+    background-color: $lightes-grey;
+    border-top: $unit-base / 2 solid $lighter-grey;
+    padding-left: $unit-40;
+
+    i {
+        color: $light-grey;
+        height: $unit-100;
+        line-height: $unit-100;
+        font-size: $unit-24;
+        cursor: pointer;
+    }
+
+    .emojis {
+        position: absolute;
+        right: $unit-108;
+        font-size: $unit-20;
+    }
+
+    input {
+        height: $unit-28;
+        width: 90%;
+        margin: $unit-36 - 2 $unit-20;
+        border-radius: $unit-base / 2;
+        border: 1px solid $light-grey;
+        padding-left: $unit-base;
+    }
+}
