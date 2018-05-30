@@ -8,11 +8,11 @@
         {{ data.title }}
       </h4>
       <p class="title-time">
-        {{ data.time | date:'HH:mm' }}
+        {{ lastMessageSentTime | date:'HH:mm' }}
       </p>
     </div>
     <p class="last-message">
-      {{ data.lastMessage }}
+      {{ lastMessage }}
     </p>
   </div>
 </div>

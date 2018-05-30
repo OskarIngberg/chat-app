@@ -15,26 +15,30 @@ import { MessageComponent } from './components/message/message.component';
 
 import { AddMessageService } from './services/add-message/add-message.service';
 import { GroupChatService } from './services/group-chat/group-chat.service';
+import { HeightSetterService } from './services/height-setter/height-setter.service';
+import { UserService } from './services/user/user.service';
 
 @NgModule({
   declarations: [
+    AddChatComponent,
     AppComponent,
+    GroupChatComponent,
     HeaderComponent,
-    SearchComponent,
     InfoComponent,
     LeftPanelComponent,
-    RightPanelComponent,
-    AddChatComponent,
+    MessageComponent,
     MessagesPanelComponent,
-    GroupChatComponent,
-    MessageComponent
+    RightPanelComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule
   ],
   providers: [
     AddMessageService,
-    GroupChatService
+    GroupChatService,
+    HeightSetterService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
