@@ -9,22 +9,26 @@ export class GroupChatComponent implements OnInit {
   @Input() data;
   lastMessage: string = '';
   lastMessageSentTime: number;
+  trimLength: number = 40
 
-  constructor() {
-    console.log(this.data);
+  constructor() {}
+
+  ngOnInit() {
     this.lastMessage = this.getLastMessage();
     this.lastMessageSentTime = this.getLastMessageSentTime();
   }
 
-  ngOnInit() {
-  }
-
   getLastMessage() {
     const messagesLength = this.data.messages.length - 1;
-    const trimLength = 10;
-    const trimLastMessage = this.data.messages[messagesLength].substring(0, trimLength) + '...';
+    const message = this.data.messages[messagesLength].message;
 
-    return trimLastMessage;
+    if (message.length > this.trimLength) {
+        const trimLastMessage = message.substring(0, this.trimLength) + '...';
+        return trimLastMessage;
+    }
+
+    return message;
+    
   }
 
   getLastMessageSentTime() {

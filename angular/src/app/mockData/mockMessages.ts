@@ -35,7 +35,7 @@ const mockMessages = [
                 image: '../../assets/1.jpg',
                 user: 'Anders Andersson',
                 time: Date.now(),
-                message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum lacinia leo non ultrices.'
+                message: 'Donec dictum lacinia leo non ultrices. Sed blandit velit a nulla efficitur, at fringilla nibh consectetur.'
             }
         ]
     },
@@ -52,7 +52,7 @@ const mockMessages = [
                 image: '../../assets/1.jpg',
                 user: 'Magnus Magnusson',
                 time: Date.now(),
-                message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum lacinia leo non ultrices. Sed blandit velit a nulla efficitur, at fringilla nibh consectetur.'
+                message: 'Curabitur vel dolor id felis fringilla.'
             }
         ]
     }
