@@ -7,7 +7,8 @@
     "start": "start npm run mongo && start npm run api && start npm run ng",
     "api": "cd api && npm start",
     "ng": "cd angular && npm start",
-    "mongo": "C:/\"Program Files\"/MongoDB/Server/3.6/bin/mongod"
+    "mongo": "C:/\"Program Files\"/MongoDB/Server/3.6/bin/mongod",
+    "install": "cd angular && npm i && cd ../api && npm i"
   },
   "repository": {
     "type": "git",
