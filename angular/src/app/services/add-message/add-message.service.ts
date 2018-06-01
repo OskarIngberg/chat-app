@@ -9,10 +9,6 @@ export class AddMessageService {
 
   constructor() { }
 
-  getMessages() {
-    return mockMessages;
-  }
-
   sendMessage(message) {
     // mockMessages.messages.push(
     //   {

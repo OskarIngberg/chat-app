@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AddMessageService } from '../../../services/add-message/add-message.service';
-import { HeightSetterService } from '../../../services/height-setter/height-setter.service';
+import { AddMessageService } from 'src/app/services/add-message/add-message.service';
+import { HeightSetterService } from 'src/app/services/height-setter/height-setter.service';
+import { GroupChatService } from 'src/app/services/group-chat/group-chat.service';
+import { MessageService } from 'src/app/services/message/message.service';
 
 @Component({
   selector: 'right-panel',
@@ -11,16 +13,23 @@ import { HeightSetterService } from '../../../services/height-setter/height-sett
 export class RightPanelComponent implements OnInit {
   windowHeight: number;
   messages;
+  chatId: number;
 
   constructor(
     private _AddMessageService: AddMessageService,
-    private _HeightSetterService: HeightSetterService
+    private _HeightSetterService: HeightSetterService,
+    private _GroupChatService: GroupChatService,
+    private _MessageService: MessageService
   ) {
     this.windowHeight = this._HeightSetterService.setWindowHeight();
-    this.messages = this._AddMessageService.getMessages();
+    this._GroupChatService.getChatId().subscribe(value => this.getMessages(value));
   }
 
   ngOnInit() {
+  }
+
+  getMessages(id) {
+    this.messages = this._MessageService.getMessages(id);
   }
 
   onResize(event) {

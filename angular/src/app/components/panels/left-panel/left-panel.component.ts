@@ -28,6 +28,7 @@ export class LeftPanelComponent implements OnInit {
   }
 
   changeGroupChat(id) {
+    this._GroupChatService.changeChat(id);
   }
 
 }
