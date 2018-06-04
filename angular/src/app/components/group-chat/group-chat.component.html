@@ -1,4 +1,7 @@
-<div class="group-chat" [class.active]="data.active">
+<div
+  class="group-chat"
+  [class.active]="active"
+  (click)="changeGroupChat(data.id)">
   <div class="image">
     <img [src]="data.image">
   </div>

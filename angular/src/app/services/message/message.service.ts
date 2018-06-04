@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { mockMessages } from '../../mockData/mockMessages';
+import { mockMessages } from 'src/app/mockData/mockMessages';
 
 @Injectable({
   providedIn: 'root'

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { GroupChatService } from 'src/app/services/group-chat/group-chat.service';
 
 @Component({
   selector: 'group-chat',
@@ -10,12 +11,26 @@ export class GroupChatComponent implements OnInit {
   lastMessage: string = '';
   lastMessageSentTime: number;
   trimLength: number = 40
+  active: boolean = false;
 
-  constructor() {}
+  constructor(
+    private _GroupChatService: GroupChatService
+  ) {}
 
   ngOnInit() {
     this.lastMessage = this.getLastMessage();
     this.lastMessageSentTime = this.getLastMessageSentTime();
+    this._GroupChatService.getChatId().subscribe(value => {
+      if (this.data.id === value) {
+        this.active = true;
+      } else {
+        this.active = false;
+      }
+    })
+  }
+
+  changeGroupChat(id) {
+    this._GroupChatService.changeChat(id);
   }
 
   getLastMessage() {

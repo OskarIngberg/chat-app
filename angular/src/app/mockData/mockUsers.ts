@@ -1,19 +1,23 @@
 const users = [
     {
         id: 1,
-        username: 'Oskar Ingberg'
+        username: 'Oskar Ingberg',
+        password: '123'
     },
     {
         id: 2,
-        username: 'Markus Markusson'
+        username: 'Markus Markusson',
+        password: '123'
     },
     {
         id: 3,
-        username: 'Anders Andersson'
+        username: 'Anders Andersson',
+        password: '123'
     },
     {
         id: 4,
-        username: 'Magnus Magnusson'
+        username: 'Magnus Magnusson',
+        password: '123'
     }
 ]
 

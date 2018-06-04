@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AddMessageService } from '../../../services/add-message/add-message.service';
-import { GroupChatService } from '../../../services/group-chat/group-chat.service';
+import { AddMessageService } from 'src/app/services/add-message/add-message.service';
+import { GroupChatService } from 'src/app/services/group-chat/group-chat.service';
 
 @Component({
   selector: 'messages-panel',
@@ -24,7 +24,8 @@ export class MessagesPanelComponent implements OnInit {
 
   onKey(event) {
     if (event.key === 'Enter') {
-      this._AddMessageService.sendMessage(event.srcElement.value);
+      this._AddMessageService.sendMessage(event.srcElement.value, this.chatId);
+      event.srcElement.value = '';
     }
   }
 

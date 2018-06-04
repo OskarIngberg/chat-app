@@ -1,0 +1,48 @@
+@import "units-variables";
+@import "colors-variables";
+
+.modal-wrapper {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(137, 137, 137, 0.6);
+
+    .remove-modal {
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        background: $lightes-grey;
+        width: $unit-400;
+        height: $unit-112;
+        border: 1px solid $lighter-grey;
+        border-radius: $unit-base;
+
+        i {
+            position: absolute;
+            top: $unit-base;
+            right: $unit-12;
+            cursor: pointer;
+        }
+
+        h4 {
+            text-align: center;
+            margin-top: $unit-32;
+        }
+
+        .buttons {
+            text-align: center;
+            padding-top: $unit-12;
+        }
+
+        .buttons button:first-child {
+            margin-right: $unit-base;
+        }
+    }
+}
+
+.active {
+    display: block;
+}

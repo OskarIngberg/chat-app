@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { UserService } from '../user/user.service';
+import { UserService } from 'src/app/services/user/user.service';
 
-import { mockMessages } from '../../mockData/mockMessages';
+import { mockMessages } from 'src/app/mockData/mockMessages';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
