@@ -11,14 +11,19 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class GroupChatService {
 
   private changeChatId: BehaviorSubject<number>;
+  private groupChats: BehaviorSubject<any>;
+  private searchResult: BehaviorSubject<any>;
 
   constructor(
     private _UserService: UserService
   ) {
     this.changeChatId = new BehaviorSubject<number>(1);
+    this.groupChats = new BehaviorSubject<any>([]);
+    this.getGroupChatsAll();
+    this.searchResult = new BehaviorSubject<any>(this.groupChats.value);
   }
 
-  getGroupChats() {
+  getGroupChatsAll() {
     const loggedInUser = this._UserService.loggedInUser();
     let groupChats = [];
 
@@ -30,7 +35,34 @@ export class GroupChatService {
       });
     });
 
-    return groupChats;
+    this.groupChats.next(groupChats);
+  }
+
+  searchGroupChats(query) {
+    let groupChats = this.groupChats.value;
+    let result = [];
+
+    if (query.length > 0) {
+      groupChats.forEach(message => {
+        let messageTitle = message.title.toLowerCase();
+
+        if (messageTitle.includes(query.toLowerCase())) {
+          result.push(message);
+        }
+      });
+    } else {
+      result = groupChats;
+    }
+
+    this.searchResult.next(result);
+  }
+
+  getGroupChats(): Observable<any> {
+    return this.groupChats;
+  }
+
+  getSearchresult(): Observable<any> {
+    return this.searchResult;
   }
 
   changeChat(id) {
@@ -39,5 +71,9 @@ export class GroupChatService {
 
   getChatId(): Observable<number> {
     return this.changeChatId;
+  }
+
+  removeGroupchat() {
+    
   }
 }

@@ -10,7 +10,7 @@ export class GroupChatComponent implements OnInit {
   @Input() data;
   lastMessage: string = '';
   lastMessageSentTime: number;
-  trimLength: number = 40
+  trimLength: number = 30;
   active: boolean = false;
 
   constructor(

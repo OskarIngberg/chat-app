@@ -1,10 +1,10 @@
-<div class="modal-wrapper">
+<div class="modal-wrapper" [class.active]="active">
   <div class="remove-modal">
-    <i class="fas fa-times"></i>
+    <i class="fas fa-times" (click)="closeModal()"></i>
     <h4>Do you really want to remove this channel?</h4>
     <div class="buttons">
       <button>Yes</button>
-      <button>No</button>
+      <button (click)="closeModal()">No</button>
     </div>
   </div>
 </div>

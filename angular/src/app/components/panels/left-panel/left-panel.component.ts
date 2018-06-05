@@ -17,7 +17,7 @@ export class LeftPanelComponent implements OnInit {
     private _HeightSetterService: HeightSetterService
   ) {
     this.windowHeight = this._HeightSetterService.setWindowHeight();
-    this.groupChats = this._GroupChatService.getGroupChats();
+    this._GroupChatService.getSearchresult().subscribe(value => this.groupChats = value);
   }
 
   ngOnInit() {

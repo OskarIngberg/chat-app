@@ -22,9 +22,10 @@
 
         i {
             position: absolute;
-            top: $unit-base;
+            top: $unit-8;
             right: $unit-12;
             cursor: pointer;
+            color: $grey;
         }
 
         h4 {
@@ -35,10 +36,16 @@
         .buttons {
             text-align: center;
             padding-top: $unit-12;
-        }
 
-        .buttons button:first-child {
-            margin-right: $unit-base;
+            button {
+                cursor: pointer;
+                border: 1px solid $grey;
+                border-radius: 4px;
+            }
+
+            button:first-child {
+                margin-right: $unit-base;
+            }
         }
     }
 }

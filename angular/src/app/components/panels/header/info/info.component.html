@@ -1,9 +1,8 @@
 <div class="header-info">
-  <h4 class="title">{{ title }}</h4>
+  <h4 class="title">{{ message.title }}</h4>
   <div class="actions">
     <i [class]="bell" (click)="doNotDisturb()"></i>
-    <i class="far fa-clock"></i>
-    <i class="fas fa-trash-alt"></i>
+    <i class="fas fa-trash-alt" (click)="removeChannel()"></i>
     <i class="fas fa-bars options-icon"></i>
   </div>
 </div>
