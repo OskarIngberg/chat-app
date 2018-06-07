@@ -22,7 +22,7 @@ export class MessagesPanelComponent implements OnInit {
   ngOnInit() {
   }
 
-  onKey(event) {
+  onKey(event): void {
     if (event.key === 'Enter') {
       this._AddMessageService.sendMessage(event.srcElement.value, this.chatId);
       event.srcElement.value = '';

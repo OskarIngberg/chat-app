@@ -16,7 +16,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  searchGroupChats(event) {
+  searchGroupChats(event): void {
     this._GroupChatService.searchGroupChats(event.srcElement.value);
   }
 

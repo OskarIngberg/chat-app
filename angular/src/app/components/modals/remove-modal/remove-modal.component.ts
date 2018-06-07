@@ -19,7 +19,7 @@ export class RemoveModalComponent implements OnInit {
   ngOnInit() {
   }
 
-  closeModal() {
+  closeModal(): void {
     this._ModalsService.closeRemoveModal();
   }
 

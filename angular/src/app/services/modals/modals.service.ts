@@ -12,11 +12,11 @@ export class ModalsService {
     this.showRemoveModal = new BehaviorSubject<boolean>(false);
   }
 
-  openRemoveModal() {
+  openRemoveModal(): void {
     this.showRemoveModal.next(true);
   }
 
-  closeRemoveModal() {
+  closeRemoveModal(): void {
     this.showRemoveModal.next(false);
   }
 

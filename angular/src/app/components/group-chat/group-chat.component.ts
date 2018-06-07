@@ -29,11 +29,11 @@ export class GroupChatComponent implements OnInit {
     })
   }
 
-  changeGroupChat(id) {
+  changeGroupChat(id): void {
     this._GroupChatService.changeChat(id);
   }
 
-  getLastMessage() {
+  getLastMessage(): string {
     const messagesLength = this.data.messages.length - 1;
     const message = this.data.messages[messagesLength].message;
 
@@ -41,12 +41,11 @@ export class GroupChatComponent implements OnInit {
         const trimLastMessage = message.substring(0, this.trimLength) + '...';
         return trimLastMessage;
     }
-
     return message;
     
   }
 
-  getLastMessageSentTime() {
+  getLastMessageSentTime(): number {
     const messagesLength = this.data.messages.length - 1;
 
     return this.data.messages[messagesLength].time;

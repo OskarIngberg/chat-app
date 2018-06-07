@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { users } from 'src/app/mockData/mockUsers';
+import { User } from 'src/app/interfaces/user';
 
 @Injectable({
   providedIn: 'root'
@@ -9,16 +10,16 @@ export class UserService {
 
   constructor() { }
 
-  loggedInUser() {
+  loggedInUser(): User {
     return users[0];
   }
 
-  loggedInUserId() {
+  loggedInUserId(): number {
     const user = this.loggedInUser();
     return user.id;
   }
 
-  getUsername(id) {
+  getUsername(id): string {
     let username: string;
 
     users.forEach(user => {

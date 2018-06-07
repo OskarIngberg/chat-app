@@ -15,7 +15,7 @@ export class AddMessageService {
     this.userId = this._UserService.loggedInUserId();
   }
 
-  sendMessage(message, messageId) {
+  sendMessage(message, messageId): void {
     mockMessages.forEach(groupChat => {
       if (groupChat.id === messageId) {
         groupChat.messages.push(

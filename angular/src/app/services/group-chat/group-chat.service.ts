@@ -23,7 +23,7 @@ export class GroupChatService {
     this.searchResult = new BehaviorSubject<any>(this.groupChats.value);
   }
 
-  getGroupChatsAll() {
+  getGroupChatsAll(): void {
     const loggedInUser = this._UserService.loggedInUser();
     let groupChats = [];
 
@@ -38,7 +38,7 @@ export class GroupChatService {
     this.groupChats.next(groupChats);
   }
 
-  searchGroupChats(query) {
+  searchGroupChats(query): void {
     let groupChats = this.groupChats.value;
     let result = [];
 
@@ -65,7 +65,7 @@ export class GroupChatService {
     return this.searchResult;
   }
 
-  changeChat(id) {
+  changeChat(id): void {
     this.changeChatId.next(id);
   }
 
@@ -73,7 +73,7 @@ export class GroupChatService {
     return this.changeChatId;
   }
 
-  removeGroupchat() {
+  removeGroupchat(): void {
     
   }
 }

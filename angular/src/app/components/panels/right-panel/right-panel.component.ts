@@ -4,6 +4,7 @@ import { AddMessageService } from 'src/app/services/add-message/add-message.serv
 import { HeightSetterService } from 'src/app/services/height-setter/height-setter.service';
 import { GroupChatService } from 'src/app/services/group-chat/group-chat.service';
 import { MessageService } from 'src/app/services/message/message.service';
+import { Messages } from 'src/app/interfaces/messages';
 
 @Component({
   selector: 'right-panel',
@@ -12,7 +13,7 @@ import { MessageService } from 'src/app/services/message/message.service';
 })
 export class RightPanelComponent implements OnInit {
   windowHeight: number;
-  messages;
+  messages: Messages;
   chatId: number;
 
   constructor(
