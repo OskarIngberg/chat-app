@@ -1,38 +1,33 @@
 import { Injectable } from '@angular/core';
 
+import { mockMessages } from 'src/app/mockData/mockMessages';
+import { UserService } from 'src/app/services/user/user.service';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AddMessageService {
+  userId: number;
 
-  mockMessages = 
-    {
-      image: '../../assets/1.jpg',
-      title: 'Markus Markusson',
-      messages: [
-        {
-          image: '../../assets/1.jpg',
-          user: 'Markus Markusson',
-          time: Date.now(),
-          message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum lacinia leo non ultrices. Sed blandit velit a nulla efficitur, at fringilla nibh consectetur. Curabitur vel dolor id felis fringilla fermentum.'
-        }
-      ]
-    };
-
-  constructor() { }
-
-  getMessages() {
-    return this.mockMessages;
+  constructor(
+    private _UserService: UserService
+  ) {
+    this.userId = this._UserService.loggedInUserId();
   }
 
-  sendMessage(message) {
-    this.mockMessages.messages.push(
-      {
-        image: '../../assets/1.jpg',
-        user: 'Oskar Ingberg',
-        time: Date.now(),
-        message: message
+  sendMessage(message, messageId): void {
+    mockMessages.forEach(groupChat => {
+      if (groupChat.id === messageId) {
+        groupChat.messages.push(
+          {
+            image: '../../assets/1.jpg',
+            user: this.userId,
+            time: Date.now(),
+            message: message
+          }
+        );
       }
-    );
+    });
+
   }
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { GroupChatService } from '../../../services/group-chat/group-chat.service';
+import { GroupChatService } from 'src/app/services/group-chat/group-chat.service';
+import { HeightSetterService } from 'src/app/services/height-setter/height-setter.service';
+import { GroupChat } from 'src/app/interfaces/group-chat';
 
 @Component({
   selector: 'left-panel',
@@ -9,28 +11,21 @@ import { GroupChatService } from '../../../services/group-chat/group-chat.servic
 })
 export class LeftPanelComponent implements OnInit {
   windowHeight: number;
-  groupChats;
+  groupChats: Array<GroupChat>;
 
-  constructor(private _GroupChatService: GroupChatService) {
-    this.windowHeight = window.innerHeight - 101;
-    this.groupChats = this._GroupChatService.getGroupChats();
+  constructor(
+    private _GroupChatService: GroupChatService,
+    private _HeightSetterService: HeightSetterService
+  ) {
+    this.windowHeight = this._HeightSetterService.setWindowHeight();
+    this._GroupChatService.getSearchresult().subscribe(value => this.groupChats = value);
   }
 
   ngOnInit() {
   }
 
-  onResize() {
-    this.windowHeight = window.innerHeight - 101;
-  }
-
-  changeGroupChat(id) {
-    this.groupChats.forEach(groupChat => {
-      if (groupChat.id === id) {
-        groupChat.active = true;
-      } else {
-        groupChat.active = false;
-      }
-    });
+  onResize(): void {
+    this.windowHeight = this._HeightSetterService.setWindowHeight();
   }
 
 }

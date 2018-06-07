@@ -1,41 +1,79 @@
 import { Injectable } from '@angular/core';
-import { WSAEHOSTUNREACH } from 'constants';
+
+import { UserService } from 'src/app/services/user/user.service';
+
+import { mockMessages } from 'src/app/mockData/mockMessages';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GroupChatService {
 
-  mockGroupChats = [
-    {
-      id: 1,
-      image: '../../assets/1.jpg',
-      time: Date.now(),
-      title: 'Markus Markusson',
-      lastMessage: 'Lorem ipsum dolor sit amet, consectetur...',
-      active: true
-    },
-    {
-      id: 2,
-      image: '../../assets/1.jpg',
-      time: Date.now(),
-      title: 'Anders Andersson',
-      lastMessage: 'Lorem ipsum dolor sit amet, consectetur...',
-      active: false
-    },
-    {
-      id: 3,
-      image: '../../assets/1.jpg',
-      time: Date.now(),
-      title: 'Magnus Magnusson',
-      lastMessage: 'Lorem ipsum dolor sit amet, consectetur...',
-      active: false
+  private changeChatId: BehaviorSubject<number>;
+  private groupChats: BehaviorSubject<any>;
+  private searchResult: BehaviorSubject<any>;
+
+  constructor(
+    private _UserService: UserService
+  ) {
+    this.changeChatId = new BehaviorSubject<number>(1);
+    this.groupChats = new BehaviorSubject<any>([]);
+    this.getGroupChatsAll();
+    this.searchResult = new BehaviorSubject<any>(this.groupChats.value);
+  }
+
+  getGroupChatsAll(): void {
+    const loggedInUser = this._UserService.loggedInUser();
+    let groupChats = [];
+
+    mockMessages.forEach(chat => {
+      chat.users.forEach(user => {
+        if (loggedInUser.id === user) {
+          groupChats.push(chat);
+        }
+      });
+    });
+
+    this.groupChats.next(groupChats);
+  }
+
+  searchGroupChats(query): void {
+    let groupChats = this.groupChats.value;
+    let result = [];
+
+    if (query.length > 0) {
+      groupChats.forEach(message => {
+        let messageTitle = message.title.toLowerCase();
+
+        if (messageTitle.includes(query.toLowerCase())) {
+          result.push(message);
+        }
+      });
+    } else {
+      result = groupChats;
     }
-  ];
 
-  constructor() { }
+    this.searchResult.next(result);
+  }
 
-  getGroupChats() {
-    return this.mockGroupChats;
+  getGroupChats(): Observable<any> {
+    return this.groupChats;
+  }
+
+  getSearchresult(): Observable<any> {
+    return this.searchResult;
+  }
+
+  changeChat(id): void {
+    this.changeChatId.next(id);
+  }
+
+  getChatId(): Observable<number> {
+    return this.changeChatId;
+  }
+
+  removeGroupchat(): void {
+    
   }
 }
