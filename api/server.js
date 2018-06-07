@@ -1,37 +1,30 @@
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+const app = require('express')();
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const http = require('http').Server(app);
 
-io.on('connection', function(socket) {
-  console.log('a user connected');
-  socket.on('disconnect', function() {
-    console.log('user disconnected');
-  });
+const config = require('./config');
 
-  socket.on('chat message', function(msg) {
-    io.emit('chat message', msg);
-  });
-});
+const socket = require('./controllers/socket');
+const localhostFix = require('./controllers/locolhostFix');
+const routes = require('./routes/chatRoutes');
 
-// Allow Localhost
-app.use(function (req, res, next) {
+const Messages = require('./models/messages');
 
-  // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+mongoose.Promise = global.Promise;
+mongoose.connect(config.mongoPort);
 
-  // Request methods you wish to allow
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-  // Request headers you wish to allow
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+// Run socket.io
+socket(http);
 
-  // Set to true if you need the website to include cookies in the requests sent
-  // to the API (e.g. in case you use sessions)
-  res.setHeader('Access-Control-Allow-Credentials', true);
+// Localhost fix
+localhostFix(app);
 
-  // Pass to next layer of middleware
-  next();
-});
+// Routes
+routes(app);
 
 http.listen(3000, function(){
   console.log('listening on *:3000');

@@ -1,0 +1,1 @@
+exports.mongoPort = 'mongodb://localhost/chatApp';

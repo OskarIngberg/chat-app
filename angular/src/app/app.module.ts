@@ -19,6 +19,7 @@ import { GroupChatService } from './services/group-chat/group-chat.service';
 import { HeightSetterService } from './services/height-setter/height-setter.service';
 import { UserService } from './services/user/user.service';
 import { ModalsService } from './services/modals/modals.service';
+import { ChatService } from './services/chat-service/chat-service.service';
 
 @NgModule({
   declarations: [
@@ -39,10 +40,11 @@ import { ModalsService } from './services/modals/modals.service';
   ],
   providers: [
     AddMessageService,
+    ChatService,
     GroupChatService,
     HeightSetterService,
     ModalsService,
-    UserService
+    UserService,
   ],
   bootstrap: [AppComponent]
 })

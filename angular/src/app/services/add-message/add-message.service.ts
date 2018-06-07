@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { mockMessages } from 'src/app/mockData/mockMessages';
 import { UserService } from 'src/app/services/user/user.service';
+import { ChatService } from 'src/app/services/chat-service/chat-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +11,13 @@ export class AddMessageService {
   userId: number;
 
   constructor(
+    private _ChatService: ChatService,
     private _UserService: UserService
   ) {
     this.userId = this._UserService.loggedInUserId();
   }
 
-  sendMessage(message, messageId): void {
+  sendMessage(message: string, messageId: number): void {
     mockMessages.forEach(groupChat => {
       if (groupChat.id === messageId) {
         groupChat.messages.push(
@@ -26,8 +28,9 @@ export class AddMessageService {
             message: message
           }
         );
+
+        this._ChatService.sendMessage(message, messageId, this.userId);
       }
     });
-
   }
 }
