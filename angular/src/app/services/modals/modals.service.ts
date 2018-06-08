@@ -7,9 +7,19 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class ModalsService {
 
   showRemoveModal: BehaviorSubject<boolean>;
+  showUserListModal: BehaviorSubject<boolean>;
 
   constructor() {
     this.showRemoveModal = new BehaviorSubject<boolean>(false);
+    this.showUserListModal = new BehaviorSubject<boolean>(false);
+  }
+
+  openUserListModal(): void {
+    this.showUserListModal.next(true);
+  }
+
+  closeUserListModal(): void {
+    this.showUserListModal.next(false);
   }
 
   openRemoveModal(): void {
@@ -22,5 +32,9 @@ export class ModalsService {
 
   getRemoveModalStatus(): Observable<boolean> {
     return this.showRemoveModal;
+  }
+
+  getUserListModalStatus(): Observable<boolean> {
+    return this.showUserListModal;
   }
 }

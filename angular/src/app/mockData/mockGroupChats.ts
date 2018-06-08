@@ -1,6 +1,6 @@
 const mockGroupChats = [
   {
-    id: 1,
+    _id: 1,
     image: '../../assets/1.jpg',
     time: Date.now(),
     title: 'Markus Markusson',
@@ -8,7 +8,7 @@ const mockGroupChats = [
     active: true
   },
   {
-    id: 2,
+    _id: 2,
     image: '../../assets/1.jpg',
     time: Date.now(),
     title: 'Anders Andersson',
@@ -16,7 +16,7 @@ const mockGroupChats = [
     active: false
   },
   {
-    id: 3,
+    _id: 3,
     image: '../../assets/1.jpg',
     time: Date.now(),
     title: 'Magnus Magnusson',

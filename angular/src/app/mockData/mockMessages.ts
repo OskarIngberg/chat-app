@@ -1,6 +1,6 @@
 const mockMessages = [
     {
-        id: 1,
+        _id: 1,
         image: '../../assets/1.jpg',
         title: 'Markus Markusson',
         users: [
@@ -12,12 +12,12 @@ const mockMessages = [
                 image: '../../assets/1.jpg',
                 user: 2,
                 time: Date.now(),
-                message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum lacinia leo non ultrices. Sed blandit velit a nulla efficitur, at fringilla nibh consectetur. Curabitur vel dolor id felis fringilla fermentum.'
+                message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum lacinia leo non ultrices. Sed blandit velit a nulla efficitur, at fringilla nibh consectetur. Curabitur vel dolor _id felis fringilla fermentum.'
             }
         ]
     },
     {
-        id: 2,
+        _id: 2,
         image: '../../assets/1.jpg',
         title: 'Anders Andersson',
         users: [
@@ -29,7 +29,7 @@ const mockMessages = [
                 image: '../../assets/1.jpg',
                 user: 3,
                 time: Date.now(),
-                message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum lacinia leo non ultrices. Sed blandit velit a nulla efficitur, at fringilla nibh consectetur. Curabitur vel dolor id felis fringilla fermentum.'
+                message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum lacinia leo non ultrices. Sed blandit velit a nulla efficitur, at fringilla nibh consectetur. Curabitur vel dolor _id felis fringilla fermentum.'
             },
             {
                 image: '../../assets/1.jpg',
@@ -40,7 +40,7 @@ const mockMessages = [
         ]
     },
     {
-        id: 3,
+        _id: 3,
         image: '../../assets/1.jpg',
         title: 'Magnus Magnusson',
         users: [
@@ -52,7 +52,7 @@ const mockMessages = [
                 image: '../../assets/1.jpg',
                 user: 4,
                 time: Date.now(),
-                message: 'Curabitur vel dolor id felis fringilla.'
+                message: 'Curabitur vel dolor _id felis fringilla.'
             }
         ]
     }

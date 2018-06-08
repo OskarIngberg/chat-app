@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/panels/header/header.component';
@@ -20,6 +21,7 @@ import { HeightSetterService } from './services/height-setter/height-setter.serv
 import { UserService } from './services/user/user.service';
 import { ModalsService } from './services/modals/modals.service';
 import { ChatService } from './services/chat-service/chat-service.service';
+import { UserlistModalComponent } from './components/modals/userlist-modal/userlist-modal.component';
 
 @NgModule({
   declarations: [
@@ -34,9 +36,11 @@ import { ChatService } from './services/chat-service/chat-service.service';
     RightPanelComponent,
     SearchComponent,
     RemoveModalComponent,
+    UserlistModalComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [
     AddMessageService,

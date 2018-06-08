@@ -19,7 +19,7 @@ export class AddMessageService {
 
   sendMessage(message: string, messageId: number): void {
     mockMessages.forEach(groupChat => {
-      if (groupChat.id === messageId) {
+      if (groupChat._id === messageId) {
         groupChat.messages.push(
           {
             image: '../../assets/1.jpg',

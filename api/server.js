@@ -10,6 +10,7 @@ const localhostFix = require('./controllers/locolhostFix');
 const routes = require('./routes/chatRoutes');
 
 const Messages = require('./models/messages');
+const Users = require('./models/user');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.mongoPort);
@@ -29,3 +30,7 @@ routes(app);
 http.listen(3000, function(){
   console.log('listening on *:3000');
 });
+
+app.listen(4000, function() {
+  console.log('listening on *:4000');
+})

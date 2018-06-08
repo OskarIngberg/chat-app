@@ -14,7 +14,7 @@ export class MessageService {
     let messages;
 
     mockMessages.forEach(message => {
-      if (message.id === id) {
+      if (message._id === id) {
         messages = message;
       }
     });

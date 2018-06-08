@@ -29,7 +29,7 @@ export class GroupChatService {
 
     mockMessages.forEach(chat => {
       chat.users.forEach(user => {
-        if (loggedInUser.id === user) {
+        if (loggedInUser._id === user) {
           groupChats.push(chat);
         }
       });

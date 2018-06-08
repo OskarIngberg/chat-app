@@ -21,7 +21,7 @@ export class GroupChatComponent implements OnInit {
     this.lastMessage = this.getLastMessage();
     this.lastMessageSentTime = this.getLastMessageSentTime();
     this._GroupChatService.getChatId().subscribe(value => {
-      if (this.data.id === value) {
+      if (this.data._id === value) {
         this.active = true;
       } else {
         this.active = false;
