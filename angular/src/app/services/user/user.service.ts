@@ -3,39 +3,30 @@ import { HttpClient } from '@angular/common/http';
 
 import { users } from 'src/app/mockData/mockUsers';
 import { User } from 'src/app/interfaces/user';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   apiUrl: string = 'http://localhost:4000';
+  user: BehaviorSubject<any>;
 
   constructor(
     private http: HttpClient
-  ) { }
-
-  loggedInUser(): User {
-    return users[0];
+  ) {
+    this.user = new BehaviorSubject<any>({});
   }
 
-  loggedInUserId(): number {
-    const user = this.loggedInUser();
-    return user._id;
+  loggedInUser(): Observable<any> {
+    return this.user;
   }
 
-  getUsername(id): string {
-    let username: string;
-
-    users.forEach(user => {
-      if (user._id === id) {
-        username = user.username;
-      }
-    });
-
-    return username;
-  }
-
-  getUsers() {
+  getUsers(): Observable<any> {
     return this.http.get(`${this.apiUrl}/users`);
+  }
+
+  loginUser(username, password): void {
+    this.http.get(`${this.apiUrl}/user/${username}/${password}`).subscribe(value => this.user.next(value));
   }
 }

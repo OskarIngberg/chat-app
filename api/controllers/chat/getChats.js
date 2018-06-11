@@ -3,9 +3,9 @@ module.exports = function(req, res) {
     const mongoose = require('mongoose');
     const Chat = mongoose.model('Messages');
 
-    let user = req.params.user;
+    let username = req.params.username;
     Chat.find(
-        { user },
+        { username },
         function(error, chats) {
             if (error) {
                 res.send(error);

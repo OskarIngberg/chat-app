@@ -24,6 +24,7 @@ export class UserlistModalComponent implements OnInit {
       if (this.active) {
         this._UserService.getUsers().subscribe(users => {
           this.users = users;
+          console.log(this.users);
         });
       }
     });

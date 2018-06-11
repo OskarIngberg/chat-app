@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 import { UserService } from 'src/app/services/user/user.service';
 
@@ -9,33 +10,28 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class GroupChatService {
+  apiUrl: string = 'http://localhost:4000';
 
   private changeChatId: BehaviorSubject<number>;
   private groupChats: BehaviorSubject<any>;
   private searchResult: BehaviorSubject<any>;
 
   constructor(
+    private http: HttpClient,
     private _UserService: UserService
   ) {
     this.changeChatId = new BehaviorSubject<number>(1);
     this.groupChats = new BehaviorSubject<any>([]);
-    this.getGroupChatsAll();
     this.searchResult = new BehaviorSubject<any>(this.groupChats.value);
+    this._UserService.loggedInUser().subscribe(value => {
+      if (value.length) {
+        this.getGroupChatsAll(value[0].username);
+      }
+    });
   }
 
-  getGroupChatsAll(): void {
-    const loggedInUser = this._UserService.loggedInUser();
-    let groupChats = [];
-
-    mockMessages.forEach(chat => {
-      chat.users.forEach(user => {
-        if (loggedInUser._id === user) {
-          groupChats.push(chat);
-        }
-      });
-    });
-
-    this.groupChats.next(groupChats);
+  getGroupChatsAll(username): void {
+    this.http.get(`${this.apiUrl}/messages/${username}`).subscribe(value => this.groupChats.next(value));
   }
 
   searchGroupChats(query): void {

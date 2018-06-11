@@ -14,7 +14,7 @@ export class AddMessageService {
     private _ChatService: ChatService,
     private _UserService: UserService
   ) {
-    this.userId = this._UserService.loggedInUserId();
+    // this.userId = this._UserService.loggedInUser()._id;
   }
 
   sendMessage(message: string, messageId: number): void {

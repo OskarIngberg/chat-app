@@ -17,7 +17,10 @@ export class MessageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.username = this._UserService.getUsername(this.data.user);
+    this._UserService.getUsers().subscribe(value => { 
+      this.username = value.username;
+      console.log(this.username);
+    });
   }
 
 }

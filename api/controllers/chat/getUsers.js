@@ -3,12 +3,19 @@ module.exports = function(req, res) {
     const mongoose = require('mongoose');
     const Users = mongoose.model('Users');
 
+    function removePassword(users) {
+        users.forEach(user => {
+            user.password = '';
+        });
+
+        return users;
+    }
+
     Users.find({}, function(error, users) {
             if (error) {
                 res.send(error);
             } else {
-                console.log(users);
-                res.json(users);
+                res.json(removePassword(users));
             }
         }
     )
