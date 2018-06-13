@@ -3,7 +3,7 @@
   [class.active]="active"
   (click)="changeGroupChat(data._id)">
   <div class="image">
-    <img [src]="data.image">
+    <img src="assets/{{ data.image }}">
   </div>
   <div class="info">
     <div class="title">
@@ -15,7 +15,7 @@
       </p>
     </div>
     <p class="last-message">
-      {{ lastMessage }}
+      {{ lastMessageUser }}: {{ lastMessage }}
     </p>
   </div>
 </div>

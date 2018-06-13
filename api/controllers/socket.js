@@ -10,8 +10,8 @@ module.exports = function(http) {
         });
 
         socket.on('clientMessage', (message) => {
-            console.log("Message Received: " + message.message);
-            io.emit('serverMessage', { type:'new-message', message });    
+            console.log("Message Received: " + JSON.stringify(message));
+            io.emit('serverMessage', { type:'new-message', message });
         });
     });
 }

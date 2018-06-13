@@ -1,9 +1,6 @@
-<div
-  class="right-panel"
-  [style.height.px]="windowHeight"
-  (window:resize)="onResize($event)">
-  <ul *ngIf="messages">
-    <li *ngFor="let message of messages.messages">
+<div class="right-panel">
+  <ul *ngIf="chat">
+    <li *ngFor="let message of chat.messages">
       <message [data]="message"></message>
     </li>
   </ul>

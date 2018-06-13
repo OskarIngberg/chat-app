@@ -1,11 +1,11 @@
-<div class="message">
+<div class="message" *ngIf="user">
     <div class="image">
-      <img [src]="data.image">
+      <img src="assets/{{ user.image }}">
     </div>
     <p class="time">{{ data.time | date:'HH:mm' }}</p>
     <div class="message-info">
       <div class="title">
-        <h4 class="name">{{ username }}</h4>
+        <h4 class="name">{{ user.displayname }}</h4>
       </div>
       <p class="message-text">
         {{ data.message }}

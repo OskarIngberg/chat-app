@@ -1,7 +1,10 @@
 <header>
     <header-panel></header-panel>
 </header>
-<div class="middle-panel">
+<div
+    class="middle-panel"
+    [style.height.px]="windowHeight"
+    (window:resize)="onResize()">
     <left-panel></left-panel>
     <right-panel></right-panel>
 </div>

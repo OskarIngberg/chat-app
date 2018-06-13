@@ -7,6 +7,9 @@ let UserSchema = new Schema({
         type: String,
         required: 'User must have a username'
     },
+    displayname: {
+        type: String
+    },
     password: {
         type: String,
         required: 'User must have a password'

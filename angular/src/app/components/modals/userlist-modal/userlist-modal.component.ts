@@ -11,7 +11,7 @@ import { User } from 'src/app/interfaces/user';
   styleUrls: ['./userlist-modal.component.scss']
 })
 export class UserlistModalComponent implements OnInit {
-  users;
+  users: User;
   active: boolean;
 
   constructor(
@@ -24,7 +24,6 @@ export class UserlistModalComponent implements OnInit {
       if (this.active) {
         this._UserService.getUsers().subscribe(users => {
           this.users = users;
-          console.log(this.users);
         });
       }
     });

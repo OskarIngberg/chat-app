@@ -1,7 +1,4 @@
-<div
-  class="group-list-wrapper"
-  [style.height.px]="windowHeight"
-  (window:resize)="onResize($event)">
+<div class="group-list-wrapper">
   <ul>
     <li *ngFor="let groupChat of groupChats">
       <group-chat [data]="groupChat"></group-chat>

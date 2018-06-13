@@ -15,8 +15,8 @@ export class ChatService {
   }
 
   // EMITTER
-  sendMessage(message: string, messageId: number, userId: number) {
-    this.socket.emit('clientMessage', { message, messageId, userId });
+  sendMessage(messageId, userId) {
+    this.socket.emit('clientMessage', { messageId, userId });
   }
 
   // HANDLER

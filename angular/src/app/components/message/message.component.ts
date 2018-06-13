@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from 'src/app/services/user/user.service';
+import { User } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'message',
@@ -10,17 +11,14 @@ export class MessageComponent implements OnInit {
 
   @Input() data;
 
-  username: string;
+  user: User;
 
   constructor(
     private _UserService: UserService
-  ) { }
+  ) {}
 
   ngOnInit() {
-    this._UserService.getUsers().subscribe(value => { 
-      this.username = value.username;
-      console.log(this.username);
-    });
+    this._UserService.getUser(this.data.user).subscribe(value => { this.user = value[0]; });
   }
 
 }

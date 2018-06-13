@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HeightSetterService {
-  footerHeight: number = 101;
+  footerHeight: number = 201;
 
   constructor() { }
 

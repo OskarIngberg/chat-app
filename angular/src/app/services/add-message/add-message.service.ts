@@ -29,7 +29,7 @@ export class AddMessageService {
           }
         );
 
-        this._ChatService.sendMessage(message, messageId, this.userId);
+        this._ChatService.sendMessage(messageId, this.userId);
       }
     });
   }

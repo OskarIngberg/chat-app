@@ -17,7 +17,7 @@ let MessagesSchema = new Schema({
                 required: 'Must have a timestamp'
             },
             user: {
-                type: Number,
+                type: String,
                 required: 'Must have a user'
             }
         }
@@ -26,14 +26,7 @@ let MessagesSchema = new Schema({
         type: String,
         required: 'Muste have a title'
     },
-    users: [
-        {
-            id: {
-                type: Number,
-                required: 'Must have atleast one user'
-            }
-        }
-    ]
+    users: [String]
 });
 
 module.exports = mongoose.model('Messages', MessagesSchema);
