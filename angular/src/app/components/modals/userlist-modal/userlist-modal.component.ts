@@ -13,16 +13,23 @@ import { User } from 'src/app/interfaces/user';
 export class UserlistModalComponent implements OnInit {
   users: User;
   active: boolean;
+  loginUser;
 
   constructor(
     private _UserService: UserService,
     private _ModalsService: ModalsService
   ) {
+    this._UserService.loggedInUser().subscribe(value => this.loginUser = value);
     this._ModalsService.getUserListModalStatus().subscribe(value => {
       this.active = value;
 
       if (this.active) {
         this._UserService.getUsers().subscribe(users => {
+          for (let i = 0; i < users.length; i++) {
+            if (users[i]._id === this.loginUser[0]._id) {
+              users.splice(i, 1);
+            }
+          }
           this.users = users;
         });
       }

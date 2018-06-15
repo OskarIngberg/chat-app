@@ -10,48 +10,53 @@
     height: 100%;
     background-color: rgba(137, 137, 137, 0.6);
 
-    .user-modal {
-        position: absolute;
-        top: 10%;
-        left: 40%;
-        background: $lightes-grey;
-        width: $unit-400;
-        border: 1px solid $lighter-grey;
-        border-radius: $unit-base;
 
-        i {
+        .user-modal {
             position: absolute;
-            top: $unit-8;
-            right: $unit-12;
-            cursor: pointer;
-            color: $grey;
-        }
+            top: 10%;
+            left: 40%;
+            background: $lightes-grey;
+            width: $unit-400;
+            max-height: $unit-368;
+            border: 1px solid $lighter-grey;
+            border-radius: $unit-base;
 
-        .user-info-wrapper {
-            padding: $unit-40;
-
-            .user-info {
-                display: flex;
-                margin-bottom: $unit-8;
+            i {
+                position: absolute;
+                top: $unit-8;
+                right: $unit-12;
                 cursor: pointer;
+                color: $grey;
+            }
 
-                h4 {
-                    margin-top: $unit-24;
-                    padding-left: $unit-12;
-                    font-weight: 700;
-                }
+            .user-info-wrapper {
+                height: 100%;
+                padding: $unit-40;
+                padding-right: 0;
+                overflow-y: scroll;
 
-                .image {
-                    width: $unit-60;
+                .user-info {
+                    display: flex;
+                    margin-bottom: $unit-8;
+                    cursor: pointer;
 
-                    img {
-                        width: 100%;
-                        clip-path: circle(50% at center);
+                    h4 {
+                        margin-top: $unit-24;
+                        padding-left: $unit-12;
+                        font-weight: 700;
+                    }
+
+                    .image {
+                        width: $unit-60;
+
+                        img {
+                            width: 100%;
+                            clip-path: circle(50% at center);
+                        }
                     }
                 }
             }
         }
-    }
 }
 
 .active {

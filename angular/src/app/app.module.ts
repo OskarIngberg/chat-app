@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
+import { routes } from './routes/routes';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/panels/header/header.component';
@@ -22,6 +25,7 @@ import { UserService } from './services/user/user.service';
 import { ModalsService } from './services/modals/modals.service';
 import { ChatService } from './services/chat-service/chat-service.service';
 import { UserlistModalComponent } from './components/modals/userlist-modal/userlist-modal.component';
+import { UserListComponent } from './pages/user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -37,10 +41,12 @@ import { UserlistModalComponent } from './components/modals/userlist-modal/userl
     SearchComponent,
     RemoveModalComponent,
     UserlistModalComponent,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
     AddMessageService,

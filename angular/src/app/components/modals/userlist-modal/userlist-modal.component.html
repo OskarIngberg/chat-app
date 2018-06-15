@@ -1,13 +1,13 @@
 <div class="modal-wrapper" [class.active]="active">
   <div class="user-modal">
-    <i class="fas fa-times" (click)="closeModal()"></i>
-    <div class="user-info-wrapper" *ngIf="users">
-      <div class="user-info" *ngFor="let user of users">
-        <div class="image">
-          <img src="assets/{{ user.image }}">
+      <i class="fas fa-times" (click)="closeModal()"></i>
+      <div class="user-info-wrapper" *ngIf="users">
+        <div class="user-info" *ngFor="let user of users">
+          <div class="image">
+            <img src="assets/{{ user.image }}">
+          </div>
+          <h4>{{ user.displayname }}</h4>
         </div>
-        <h4>{{ user.displayname }}</h4>
       </div>
-    </div>
   </div>
 </div>
