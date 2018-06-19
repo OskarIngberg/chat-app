@@ -6,31 +6,3 @@ header-panel {
     display: flex;
 }
 
-.middle-panel {
-    width: 100%;
-    display: flex;
-
-    left-panel {
-        width: 20%;
-    }
-
-    right-panel {
-        width: 80%;
-        overflow-y: scroll;
-    }
-}
-
-.footer-panel {
-    width: 100%;
-    display: flex;
-    position: fixed;
-    bottom: 0;
-
-    add-chat {
-        width: 20%;
-    }
-
-    messages-panel {
-        width: 80%;
-    }
-}

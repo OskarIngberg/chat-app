@@ -1,0 +1,12 @@
+<div
+    class="middle-panel"
+    [style.height.px]="windowHeight"
+    (window:resize)="onResize()">
+    <left-panel></left-panel>
+    <right-panel></right-panel>
+</div>
+<div class="footer-panel">
+    <add-chat-panel></add-chat-panel>
+    <messages-panel></messages-panel>
+</div>
+<remove-modal></remove-modal>

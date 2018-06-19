@@ -13,24 +13,28 @@
         padding-left: $unit-40;
         font-size: $unit-20;
     }
+    .chat-header {
+        width: 100%;
+        display: flex;
 
-    .actions {
-        width: 15%;
+        .actions {
+            width: 15%;
 
-        i {
-            height: $unit-100;
-            line-height: $unit-100;
-            color: $light-grey;
-            margin-right: $unit-24;
-            cursor: pointer;
-        }
+            i {
+                height: $unit-100;
+                line-height: $unit-100;
+                color: $light-grey;
+                margin-right: $unit-24;
+                cursor: pointer;
+            }
 
-        .options-icon {
-            margin-left: 20px;
-        }
+            .options-icon {
+                margin-left: 20px;
+            }
 
-        i:last-child {
-            margin-right: 0;
+            i:last-child {
+                margin-right: 0;
+            }
         }
     }
 

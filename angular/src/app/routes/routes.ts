@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
-import { AppComponent } from 'src/app/app.component';
-import { UserListComponent } from 'src/app/pages/user-list/user-list.component';
+import { AddChatComponent } from 'src/app/pages/add-chat/add-chat.component';
+import { ChatComponent } from 'src/app/pages/chat/chat.component';
 
 const routes: Routes = [
     {
@@ -11,11 +11,11 @@ const routes: Routes = [
     },
     {
         path: 'chat',
-        component: AppComponent
+        component: ChatComponent
     },
     {
-        path: 'userList',
-        component: UserListComponent
+        path: 'userlist',
+        component: AddChatComponent
     }
 ];
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { GroupChatService } from 'src/app/services/group-chat/group-chat.service';
 import { GroupChat } from 'src/app/interfaces/group-chat';
+import { HeaderHelperService } from 'src/app/services/header-helper/header-helper.service';
 
 @Component({
   selector: 'left-panel',
@@ -9,11 +10,14 @@ import { GroupChat } from 'src/app/interfaces/group-chat';
   styleUrls: ['./left-panel.component.scss']
 })
 export class LeftPanelComponent implements OnInit {
+  activeHeader: string;
   groupChats: Array<GroupChat>;
 
   constructor(
-    private _GroupChatService: GroupChatService
+    private _GroupChatService: GroupChatService,
+    private _HeaderHelperService: HeaderHelperService
   ) {
+    this._HeaderHelperService.getActiveHeader().subscribe(value => this.activeHeader = value);
     this._GroupChatService.getSearchresult().subscribe(value => this.groupChats = value);
   }
 

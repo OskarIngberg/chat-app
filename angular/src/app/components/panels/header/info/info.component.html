@@ -1,8 +1,15 @@
 <div class="header-info">
-  <h4 class="title">{{ chat.title }}</h4>
-  <div class="actions">
-    <i [class]="bell" (click)="doNotDisturb()"></i>
-    <i class="fas fa-trash-alt" (click)="removeChannel()"></i>
-    <i class="fas fa-bars options-icon"></i>
+  <div class="chat-header" *ngIf="activeHeader === 'chat'">
+    <h4 class="title">{{ chat.title }}</h4>
+    <div class="actions">
+      <i [class]="bell" (click)="doNotDisturb()"></i>
+      <i class="fas fa-trash-alt" (click)="removeChannel()"></i>
+      <i class="fas fa-bars options-icon"></i>
+    </div>
+  </div>
+  <div *ngIf="activeHeader === 'userlist'">
+    <div class="userlist-header">
+      <h4 class="title">Add Chat</h4>
+    </div>
   </div>
 </div>

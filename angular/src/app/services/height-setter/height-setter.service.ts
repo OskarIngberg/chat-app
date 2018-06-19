@@ -4,11 +4,20 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HeightSetterService {
-  footerHeight: number = 201;
+  headerHeight: number = 100;
+  footerHeight: number = 100;
 
   constructor() { }
 
   setWindowHeight(): number {
-    return window.innerHeight - this.footerHeight;
+    return window.innerHeight;
+  }
+
+  setPanelHeightWithHeader(): number {
+    return window.innerHeight - this.headerHeight;
+  }
+
+  setPanelHeightWithFooterHeader(): number {
+    return window.innerHeight - (this.footerHeight + this.footerHeight);
   }
 }

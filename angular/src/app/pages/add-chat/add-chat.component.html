@@ -1,0 +1,17 @@
+<div
+  [style.height.px]="windowHeight"
+  (window:resize)="onResize()">
+    <div class="user-list-search">
+      <input type="text" placeholder="Search for user">
+    </div>
+    <div class="user-list">
+      <div class="user-info-wrapper" *ngIf="users">
+        <div class="user-info" *ngFor="let user of users">
+          <div class="image">
+            <img src="assets/{{ user.image }}">
+          </div>
+          <h4>{{ user.displayname }}</h4>
+        </div>
+      </div>
+  </div>
+</div>

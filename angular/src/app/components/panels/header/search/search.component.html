@@ -1,5 +1,5 @@
 <div class="header-search">
-    <div class="search-input">
+    <div class="search-input" *ngIf="activeHeader === 'chat'">
         <i class="fas fa-search"></i>
         <input type="text" placeholder="Search" (keyup)="searchGroupChats($event)">
     </div>

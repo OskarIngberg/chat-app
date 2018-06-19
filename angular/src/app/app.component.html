@@ -1,16 +1,4 @@
 <header>
     <header-panel></header-panel>
 </header>
-<div
-    class="middle-panel"
-    [style.height.px]="windowHeight"
-    (window:resize)="onResize()">
-    <left-panel></left-panel>
-    <right-panel></right-panel>
-</div>
-<div class="footer-panel">
-    <add-chat></add-chat>
-    <messages-panel></messages-panel>
-</div>
-<remove-modal></remove-modal>
-<userlist-modal></userlist-modal>
+<router-outlet></router-outlet>

@@ -1,0 +1,49 @@
+@import "units-variables";
+@import "colors-variables";
+
+.user-list-search {
+    input {
+        border: none;
+        border-bottom: 1px solid black;
+        width: 60%;
+        display: block;
+        margin: 0 auto;
+        padding: 20px 40px;
+        font-size: 20px;
+    }
+}
+
+.user-list {
+    width: 60%;
+    margin: 0 auto;
+
+    .user-info-wrapper {
+        height: 100%;
+        padding-left: $unit-40;
+
+        .user-info {
+            display: flex;
+            margin-bottom: $unit-8;
+            cursor: pointer;
+
+            h4 {
+                margin-top: $unit-24;
+                padding-left: $unit-12;
+                font-weight: 700;
+            }
+
+            .image {
+                width: $unit-60;
+
+                img {
+                    width: 100%;
+                    clip-path: circle(50% at center);
+                }
+            }
+        }
+
+        .user-info:first-child {
+            margin-top: $unit-40;
+        }
+    }
+}
