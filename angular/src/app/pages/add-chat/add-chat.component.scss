@@ -8,8 +8,8 @@
         width: 60%;
         display: block;
         margin: 0 auto;
-        padding: 20px 40px;
-        font-size: 20px;
+        padding: $unit-20 $unit-40;
+        font-size: $unit-20;
     }
 }
 
@@ -18,7 +18,7 @@
     margin: 0 auto;
 
     .user-info-wrapper {
-        height: 100%;
+        overflow-y: scroll;
         padding-left: $unit-40;
 
         .user-info {

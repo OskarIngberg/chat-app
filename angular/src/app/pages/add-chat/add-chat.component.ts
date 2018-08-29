@@ -4,7 +4,7 @@ import { UserService } from 'src/app/services/user/user.service';
 import { HeaderHelperService } from 'src/app/services/header-helper/header-helper.service';
 import { HeightSetterService } from 'src/app/services/height-setter/height-setter.service';
 
-import { User } from 'src/app/interfaces/user';
+import { IUser } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'add-chat',
@@ -13,15 +13,15 @@ import { User } from 'src/app/interfaces/user';
 })
 export class AddChatComponent implements OnInit {
   windowHeight: number;
-  loginUser: User;
-  users: Array<User>;
+  loginUser: IUser;
+  users: Array<IUser>;
 
   constructor(
     private _UserService: UserService,
     private _HeaderHelperService: HeaderHelperService,
     private _HeightSetterService: HeightSetterService
   ) {
-    this.windowHeight = this._HeightSetterService.setPanelHeightWithHeader();
+    this.windowHeight = this._HeightSetterService.setPanelHeightWithHeader() - 65;
     this._HeaderHelperService.setActiveHeader('userlist');
     this._UserService.loggedInUser().subscribe(loginedUser => {
       if (loginedUser.length > 0) {
@@ -41,7 +41,7 @@ export class AddChatComponent implements OnInit {
   }
 
   onResize() {
-    this.windowHeight = this._HeightSetterService.setPanelHeightWithHeader();
+    this.windowHeight = this._HeightSetterService.setPanelHeightWithHeader() - 65;
   }
 
 }

@@ -17,7 +17,6 @@ import { MessagesPanelComponent } from './components/panels/messages-panel/messa
 import { GroupChatComponent } from './components/group-chat/group-chat.component';
 import { MessageComponent } from './components/message/message.component';
 import { RemoveModalComponent } from './components/modals/remove-modal/remove-modal.component';
-import { UserlistModalComponent } from './components/modals/userlist-modal/userlist-modal.component';
 import { AddChatComponent } from './pages/add-chat/add-chat.component';
 import { ChatComponent } from './pages/chat/chat.component';
 
@@ -44,7 +43,6 @@ import { UserListComponent } from './components/user-list/user-list.component';
     RightPanelComponent,
     SearchComponent,
     RemoveModalComponent,
-    UserlistModalComponent,
     ChatComponent,
     UserListComponent
   ],

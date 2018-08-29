@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from 'src/app/services/user/user.service';
-import { User } from 'src/app/interfaces/user';
+import { IUser } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'message',
@@ -11,7 +11,7 @@ export class MessageComponent implements OnInit {
 
   @Input() data;
 
-  user: User;
+  user: IUser;
 
   constructor(
     private _UserService: UserService

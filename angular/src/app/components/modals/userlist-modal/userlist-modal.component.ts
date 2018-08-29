@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user/user.service';
 import { ModalsService } from 'src/app/services/modals/modals.service';
 
-import { User } from 'src/app/interfaces/user';
+import { IUser } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'userlist-modal',
@@ -11,7 +11,7 @@ import { User } from 'src/app/interfaces/user';
   styleUrls: ['./userlist-modal.component.scss']
 })
 export class UserlistModalComponent implements OnInit {
-  users: User;
+  users: IUser;
   active: boolean;
   loginUser;
 
@@ -24,7 +24,7 @@ export class UserlistModalComponent implements OnInit {
       this.active = value;
 
       if (this.active) {
-        this._UserService.getUsers().subscribe(users => {
+        this._UserService.returnUsers().subscribe(users => {
           for (let i = 0; i < users.length; i++) {
             if (users[i]._id === this.loginUser[0]._id) {
               users.splice(i, 1);

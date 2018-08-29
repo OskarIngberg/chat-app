@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { User } from 'src/app/interfaces/user';
+import { IUser } from 'src/app/interfaces/user';
 import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({

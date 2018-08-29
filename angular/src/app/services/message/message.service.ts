@@ -7,7 +7,7 @@ import { ChatService } from 'src/app/services/chat-service/chat-service.service'
 import { UserService } from 'src/app/services/user/user.service';
 
 import { Message } from 'src/app/interfaces/message';
-import { User } from 'src/app/interfaces/user';
+import { IUser } from 'src/app/interfaces/user';
 
 @Injectable({
   providedIn: 'root'
