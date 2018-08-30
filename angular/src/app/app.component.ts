@@ -21,12 +21,6 @@ export class AppComponent {
     this._UserService.loginUser('OskarIngberg', '123');
   }
 
-  ngOnInit() {
-    this._ChatService.messages().subscribe(message => {
-      console.log(message);
-    });
-  }
-
   onResize() {
     this.windowHeight = this._HeightSetterService.setWindowHeight();
   }

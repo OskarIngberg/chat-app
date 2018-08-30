@@ -6,7 +6,7 @@ import { GroupChatService } from 'src/app/services/group-chat/group-chat.service
 import { ChatService } from 'src/app/services/chat-service/chat-service.service';
 import { UserService } from 'src/app/services/user/user.service';
 
-import { Message } from 'src/app/interfaces/message';
+import { IMessage } from 'src/app/interfaces/message';
 import { IUser } from 'src/app/interfaces/user';
 
 @Injectable({
@@ -14,8 +14,8 @@ import { IUser } from 'src/app/interfaces/user';
 })
 export class MessageService {
   private apiUrl: string = 'http://localhost:4000';
-  private chat: BehaviorSubject<Message>;
-  private user;
+  private chat: BehaviorSubject<IMessage>;
+  private user: IUser;
 
   constructor(
     private _GroupChatsService: GroupChatService,
@@ -40,7 +40,7 @@ export class MessageService {
     });
   }
 
-  getChat(): Observable<Message> {
+  getChat(): Observable<IMessage> {
     return this.chat;
   }
 

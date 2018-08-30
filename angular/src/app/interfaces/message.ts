@@ -1,10 +1,10 @@
-import { Messages } from "src/app/interfaces/messages";
-import { Users } from "src/app/interfaces/users";
+import { IMessages } from "src/app/interfaces/messages";
+import { IUsers } from "src/app/interfaces/users";
 
-export interface Message {
+export interface IMessage {
     _id: number,
     image: string,
-    messages: Array<Messages>,
+    messages: Array<IMessages>,
     title: string,
-    users: Array<Users>
+    users: Array<IUsers>
 }

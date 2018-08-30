@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MessageService } from 'src/app/services/message/message.service';
-import { Message } from 'src/app/interfaces/message';
+import { IMessage } from 'src/app/interfaces/message';
 
 @Component({
   selector: 'messages-panel',
@@ -10,7 +10,7 @@ import { Message } from 'src/app/interfaces/message';
 })
 export class MessagesPanelComponent implements OnInit {
 
-  chat: Message;
+  chat: IMessage;
 
   constructor(
     private _MessageService: MessageService

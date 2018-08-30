@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { GroupChatService } from 'src/app/services/group-chat/group-chat.service';
-import { GroupChat } from 'src/app/interfaces/group-chat';
+import { IGroupChat } from 'src/app/interfaces/group-chat';
 import { HeaderHelperService } from 'src/app/services/header-helper/header-helper.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { HeaderHelperService } from 'src/app/services/header-helper/header-helpe
 })
 export class LeftPanelComponent implements OnInit {
   activeHeader: string;
-  groupChats: Array<GroupChat>;
+  groupChats: Array<IGroupChat>;
 
   constructor(
     private _GroupChatService: GroupChatService,

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { MessageService } from 'src/app/services/message/message.service';
-import { Message } from 'src/app/interfaces/message';
+import { IMessage } from 'src/app/interfaces/message';
 
 @Component({
   selector: 'right-panel',
@@ -9,7 +9,7 @@ import { Message } from 'src/app/interfaces/message';
   styleUrls: ['./right-panel.component.scss']
 })
 export class RightPanelComponent implements OnInit {
-  chat: Message;
+  chat: IMessage;
 
   constructor(
     private _MessageService: MessageService

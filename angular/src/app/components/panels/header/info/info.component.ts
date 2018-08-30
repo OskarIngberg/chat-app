@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'src/app/services/message/message.service';
 import { ModalsService } from 'src/app/services/modals/modals.service';
 
-import { Messages } from 'src/app/interfaces/messages';
 import { HeaderHelperService } from 'src/app/services/header-helper/header-helper.service';
 
 @Component({

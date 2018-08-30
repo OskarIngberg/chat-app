@@ -1,4 +1,4 @@
-export interface Messages {
+export interface IMessages {
     image?: string,
     message: string,
     time: number,
